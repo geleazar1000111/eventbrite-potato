@@ -17,9 +17,9 @@ def index():
 def download_html():
     events_html = scrape.get_events()
     jobs_html = scrape.get_jobs()
-    scrape.write_to_template(events_html, jobs_html)
+    new_file = scrape.write_to_template(events_html, jobs_html)
     return Response(
-        'asce_oc_template.html',
+        new_file,
         mimetype="text/html",
         headers={"Content-disposition":
                  "attachment; filename=asce-email.html"})
