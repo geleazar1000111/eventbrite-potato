@@ -18,8 +18,11 @@ def download_html():
     events_html = scrape.get_events()
     jobs_html = scrape.get_jobs()
     scrape.write_to_template(events_html, jobs_html)
+    file = open('asce_oc_template.html', 'r')
+    returnfile = file.read().encode('utf-8')
+    file.close()
     return Response(
-        'asce-email.html',
+        returnfile,
         mimetype="text/html",
         headers={"Content-disposition":
                  "attachment; filename=asce-email.html"})
