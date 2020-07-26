@@ -22,7 +22,7 @@ def download_html():
         'asce_oc_template.html',
         mimetype="text/html",
         headers={"Content-disposition":
-                 "attachment; filename=test.html"})
+                 "attachment; filename=asce-email.html"})
 
 
 if __name__ == '__main__':
