@@ -17,8 +17,9 @@ def index():
 def download_html():
     events_html = scrape.get_events()
     jobs_html = scrape.get_jobs()
-    scrape.write_to_template(events_html, jobs_html)
-    file = open('asce_oc_template.html', 'r')
+    html_string = scrape.write_to_template(events_html, jobs_html)
+    file = open('asce_email.html', 'w+')
+    file.write(html_string)
     returnfile = file.read().encode('utf-8')
     file.close()
     return Response(
