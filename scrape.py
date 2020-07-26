@@ -83,7 +83,4 @@ def write_to_template(event_html, job_html):
         upcoming_events.insert_after(event_soup)
         job_opportunities.insert_after(job_soup)
 
-    # with open("asce-oc-template.html", "w", encoding='utf-8') as file:
-    #     file.write(str(template_soup))
-
     return str(template_soup)
